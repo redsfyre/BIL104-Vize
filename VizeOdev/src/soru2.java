@@ -24,23 +24,23 @@ public class soru2 {
 
 	static int[][] colons;
 
-	static boolean colonDogru(int[] numbers){
+	static boolean colonTrue(int[] numbers){
 		
 		if(control(numbers)){
 			return false;
 		}
 
-		int individualNumber = 0, doubleNumber = 0;
+		int oddNumber = 0, evenNumber = 0;
 
 		for(int i=0; i<numbers.length; i++){
 			if(numbers[i] % 2 == 0){
-				doubleNumber++;
+				evenNumber++;
 			} else {
-				individualNumber++;
+				oddNumber++;
 			}
 		}
 
-		if(individualNumber != doubleNumber){
+		if(oddNumber != evenNumber){
 			return false;
 		}
 
@@ -105,7 +105,7 @@ public class soru2 {
 		return true;
 	}
 
-    static void colonYazdir(){
+    static void writeColon(){
         int a=1;
         for(int i = 0;i < colons.length;i++){
             System.out.println("Kolon " + a + "Sayilari: ");
@@ -144,14 +144,14 @@ public class soru2 {
 
             for(int i = 0;i < colon;){
                 int[] newColon = createColon();
-                if(colonDogru(newColon)){
+                if(colonTrue(newColon)){
                     colons[i] = newColon;
                     i++;
                 }
             }
 
 
-            colonYazdir();
+            writeColon();
         }
 }
 
